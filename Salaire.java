@@ -3,12 +3,12 @@ package TP7;
 public class Salaire {
     public static void main(String[] args) {
         Personnel p = new Personnel();
-        p.ajouterEmploye(new Vente("Pierre", "Business", 45, "1995", 30000.0));
-        p.ajouterEmploye(new Representation("Léon", "Vendtout", 25, "2001", 2000.0));
-        p.ajouterEmploye(new Production("Yvan", "doseur", 29, "2000", 1000));
-        p.ajouterEmploye(new Manutention("Jeanne", "Dupont", 32, "1993",45.0));
-        p.ajouterEmploye(new ProductionDanger("Jean", "Filippe", 28, "2000", 1000));
-        p.ajouterEmploye(new ManutentionDanger("Ali", "Abordage", 35, "2002", 45.0));
+        p.ajouterEmploye(new Vente("Pierre", "Business ", 45, "1995", 30000.0));
+        p.ajouterEmploye(new Representation("Léon", "Vendtout ", 25, "2001", 2000.0));
+        p.ajouterEmploye(new Production("Yvan", "doseur ", 29, "2000", 1000));
+        p.ajouterEmploye(new Manutention("Jeanne", "Dupont ", 32, "1993",45.0));
+        p.ajouterEmploye(new ProductionDanger("Jean", "Filippe ", 28, "2000", 1000));
+        p.ajouterEmploye(new ManutentionDanger("Ali", "Abordage ", 35, "2002", 45.0));
         
         p.calculerSalaires();
         System.out.println("Le salaire moyen de l'entreprise eset = " + p.salaireMoyen() + "$");
@@ -52,7 +52,7 @@ class Vente extends Employe {
 
     @Override
     String getNom() {
-        return super.getNom();
+        return super.getNom() + " Vendeur";
     }
 }
 
@@ -72,7 +72,7 @@ class Representation extends Employe {
 
     @Override
     String getNom() {
-        return super.getNom();
+        return super.getNom() + " Representant";
     }
 }
 
@@ -92,7 +92,7 @@ class Production extends Employe {
 
     @Override
     String getNom() {
-        return super.getNom();
+        return super.getNom() + " Technicien";
     }
 }
 
@@ -112,7 +112,7 @@ class Manutention extends Employe {
 
     @Override
     String getNom() {
-        return super.getNom();
+        return super.getNom() + " Manutentier";
     }
 }
 
@@ -128,7 +128,7 @@ class ProductionDanger extends Production {
 
     @Override
     String getNom() {
-        return super.getNom() + " Employé à danger";
+        return super.getNom() + " producteur à risque";
     }
 }
 
@@ -144,7 +144,7 @@ class ManutentionDanger extends Manutention {
 
     @Override
     String getNom() {
-        return super.getNom() + " Employé à danger";
+        return super.getNom() + " manutantier à risque";
     }
 }
 
@@ -163,7 +163,7 @@ class Personnel {
 
     void calculerSalaires() {
 	    for (int i = 0;i<id;i++) {
-		System.out.println("le salaire de "+listemploye[i].getNom()+ listemploye[i].calculerSalaire());
+		System.out.println("le salaire de "+listemploye[i].getNom()+ " " +listemploye[i].calculerSalaire());
 	    }
     }
 
